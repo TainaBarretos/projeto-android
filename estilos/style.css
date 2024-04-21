@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root{
+    --fundoprincipal: rgba(120, 203, 236, 0.886);
+    --fundo1: #23d8def4;
+    --cordestaque: #87cacb68;
+    --fundo2: #5eced2be;
+    --clicaveis: #3E5D5E;
+    --fundo3: #132F38;
+
+    --font-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque: 'Bebas Neue' , sans-serif;
+    --font-titulo: 'Big Shoulders Text', sans-serif;
+    --font-android: 'Android' , cursive;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: var(--font-padrao);
+    background-color: var(--cordestaque);
+    text-align: justify;
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--clicaveis), var(--fundo3));
+    height: 230px;
+}
+
+header > h1{
+    color: white;
+    font-family: var(--font-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.313);
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+header > p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.313);
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+
+}
+
+header > nav {
+    padding: 20px;
+}
+
+header > nav > a{
+    color:var(--fundo1);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+}
+
+nav > a:hover{
+    background-color: var(--cordestaque);
+    color: white;
+}
+
+main{
+    padding: 20px;
+    background-color: white;
+    border-radius: 0px 0px 10px 10px;
+    min-width: 300px; /*tamanhoo mínimo de tela*/
+    max-width: 1000px; /*tamanho máx de tela*/
+    margin: auto;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.388); /*só vai ter espalhamento, sem deslocamento lateral!*/
+}
+
+main h1{
+    font-family: var(--font-android);
+    color:var(--fundo3);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2{
+    font-family: var(--font-android);
+    background-image: linear-gradient(to right, var(--cordestaque), transparent);
+    color:var(--clicaveis);
+    font-size: 1.3em;
+    font-weight: normal;
+}
+
+main a{
+    text-decoration: none;
+    color: var(--fundo3);
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 2px 5px;
+    background-color: var(--cordestaque);
+}
+
+main a:hover{
+    color:var(--clicaveis);
+    text-decoration: underline;
+}
+
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px; /*recuo inicial do parágrafo*/
+    line-height: 2em; /*espaçamento entre linhas*/
+}
+
+main strong{
+    color: var(--fundo3);
+    font-weight: bold;
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pequena{
+
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+a.externo::after{
+    content: '\00A0\1F517'; /*o \ é para funcionar, já o \00A0 é para dar espaço antes*/
+}
+
+div.video{
+    background-color: var(--fundo3);
+    margin: 0px -20px 30px -20px; /*assim ele colará no fim do main nas laterais*/
+    padding: 20px;
+    position: relative;
+    padding-bottom: 59%;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+aside{
+    background-color: var(--cordestaque);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.301);
+}
+
+aside > h3{
+    background-color: var(--clicaveis);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px; /*margin vazando para fora em todos os lados exceto em baixo, permitindo que as duas caixas grudem uma na outra*/
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul{
+    list-style-type: none; /*remove os marcadores padrões*/ 
+    columns: 2; /*divide os itens da lista em duas colunas*/ 
+    column-gap: 40px; /*espaçamento entre as colunas*/
+    padding: 10px;
+}
+
+aside > li{
+    display: block; /*garante que cada item ocupe uma linha*/
+    line-height: 2em; /*adiciona espaço entre os itens*/
+}
+
+aside > ul > li::before{
+    content: '\002714';
+    color: var(--fundo3);
+    padding-right: 8px;
+} 
+
+abbr{
+    text-decoration: none;
+    color: var(--fundo3);
+    font-weight: bold;
+}
+
+footer{
+    background-color: var(--fundo3);
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px;
+    max-height: 30px;
+    margin-bottom: 3px;
+}
+
+footer a{
+    color: var(--fundo2);
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: var(--fundo1);
+    text-decoration: underline;
+}
